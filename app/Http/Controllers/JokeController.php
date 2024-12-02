@@ -13,4 +13,9 @@ class JokeController extends Controller
 
         return view('jokes.index', ['jokes' => $jokes]);
     }
+
+    public function create()
+    {
+        return view('jokes.create');
+    }
 }

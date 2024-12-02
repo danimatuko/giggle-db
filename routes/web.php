@@ -17,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::view('/','home');
 
 Route::get('/jokes',[JokeController::class,'index']);
+Route::get('/jokes/create', [JokeController::class, 'create']);
+
