@@ -14,13 +14,62 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/','home');
+/**
+ * Home Route
+ *
+ * This route handles the homepage view of the application.
+ */
+Route::view('/', 'home');
 
-Route::get('/jokes',[JokeController::class,'index']);
+/**
+ * Jokes Routes
+ *
+ * These routes handle the CRUD operations for jokes, including:
+ * - Viewing all jokes
+ * - Creating, storing, and editing jokes
+ * - Showing specific jokes
+ * - Deleting jokes
+ */
+
+// Display all jokes
+Route::get('/jokes', [JokeController::class, 'index']);
+
+/**
+ * Show form to create a new joke
+ */
 Route::get('/jokes/create', [JokeController::class, 'create']);
-Route::post('/jokes', [JokeController::class, 'store']);
-Route::get('/jokes/{id}', [JokeController::class,'show']);
-Route::get('/jokes/{joke}/edit', [JokeController::class, 'edit']);
-Route::put('/jokes/{joke}', [JokeController::class, 'update']);
-Route::delete('/jokes/{joke}/destroy', [JokeController::class, 'destroy']);
 
+/**
+ * Store a newly created joke
+ *
+ * This route handles the storage of a new joke after validation.
+ */
+Route::post('/jokes', [JokeController::class, 'store']);
+
+/**
+ * Show a specific joke
+ *
+ * This route shows the details of a specific joke based on its ID.
+ */
+Route::get('/jokes/{id}', [JokeController::class, 'show']);
+
+/**
+ * Show form to edit a specific joke
+ *
+ * This route presents the form to edit an existing joke.
+ */
+Route::get('/jokes/{joke}/edit', [JokeController::class, 'edit']);
+
+/**
+ * Update a specific joke
+ *
+ * This route handles the update of a specific joke based on the submitted form data.
+ */
+Route::put('/jokes/{joke}', [JokeController::class, 'update']);
+
+/**
+ * Delete a specific joke
+ *
+ * This route handles the deletion of a specific joke from the database.
+ */
+Route::delete('/jokes/{joke}/destroy', [JokeController::class, 'destroy']);
