@@ -47,4 +47,20 @@ class JokeController extends Controller
         return view('jokes.show', compact('joke'));
 
     }
+    public function edit(Joke $joke)
+    {
+        return view('jokes.edit', compact('joke'));
+    }
+
+    public function update(Request $request, Joke $joke)
+    {
+        $validated = $request->validate([
+            'setup' => 'required|string|max:255',
+            'punchline' => 'required|string|max:255',
+        ]);
+
+        $joke->update($validated);
+
+        return redirect('/jokes')->with('success', 'Joke updated successfully!');
+    }
 }

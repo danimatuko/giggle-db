@@ -7,14 +7,18 @@
     </hgroup>
 </header>
 
-    <small>Created on:</strong> {{ $joke->created_at->format('F j, Y') }}</small>
+<small>Created on:</strong> {{ $joke->created_at->format('F j, Y') }}</small>
 
-      <blockquote>
-            “{{ $joke->setup }}”
-            <footer>
-                <cite>— {{ $joke->punchline }}</cite>
-            </footer>
-        </blockquote>
+<blockquote>
+    “{{ $joke->setup }}”
+    <footer>
+        <cite>— {{ $joke->punchline }}</cite>
+    </footer>
+</blockquote>
 
+<div class="actions">
     <a href="/jokes" class="btn">Back to Jokes</a>
+    <a href="/jokes/{{$joke->id}}/edit" class="btn btn-edit">Edit Joke</a>
+</div>
+
 </x-layout>

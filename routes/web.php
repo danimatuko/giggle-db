@@ -20,4 +20,6 @@ Route::get('/jokes',[JokeController::class,'index']);
 Route::get('/jokes/create', [JokeController::class, 'create']);
 Route::post('/jokes', [JokeController::class, 'store']);
 Route::get('/jokes/{id}', [JokeController::class,'show']);
+Route::get('/jokes/{joke}/edit', [JokeController::class, 'edit']);
+Route::put('/jokes/{joke}', [JokeController::class, 'update']);
 
