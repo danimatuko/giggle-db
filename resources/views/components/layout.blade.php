@@ -17,6 +17,9 @@
     <!-- Link to the custom stylesheet for any additional styling specific to the project -->
     <link rel="stylesheet" href="/main.css" />
 
+    <!-- Link to external script -->
+    <script src="/main.js" defer></script>
+
     <title>GiggleDB - Home</title>
 </head>
 
