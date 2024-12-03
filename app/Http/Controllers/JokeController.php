@@ -40,4 +40,11 @@ class JokeController extends Controller
         return redirect('/jokes')->with('success', 'Joke added successfully! 🎉');
     }
 
+    public function show(string $id)
+    {
+        $joke = Joke::findOrFail($id);
+
+        return view('jokes.show', compact('joke'));
+
+    }
 }

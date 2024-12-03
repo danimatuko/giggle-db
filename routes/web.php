@@ -19,4 +19,5 @@ Route::view('/','home');
 Route::get('/jokes',[JokeController::class,'index']);
 Route::get('/jokes/create', [JokeController::class, 'create']);
 Route::post('/jokes', [JokeController::class, 'store']);
+Route::get('/jokes/{id}', [JokeController::class,'show']);
 
