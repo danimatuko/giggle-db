@@ -22,6 +22,11 @@
         </blockquote>
     </a>
     @endforeach
+
+<div class="pagination">
+    {{ $jokes->links() }}
+</div>
+
 </div>
 
 </x-layout>
